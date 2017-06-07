@@ -1,0 +1,178 @@
+.notification {
+    position: fixed;
+    top: -50px;
+    left: 30%;
+    right: 30%;
+    z-index: 10;
+    height: 50px;
+    padding: 1rem;
+    opacity: 0;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.hero-body .wrapper {
+    position: relative;
+    width: 50%;
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: rgba(240, 240, 240, .8);
+    /*box-shadow: 0 0 8px 5px #fff;*/
+}
+
+.hero-body .wrapper::before {
+    content: "A-SPACE";
+    display: inline-block;
+    position: absolute;
+    top: -133.1px;
+    left: -351px;
+    right: -100px;
+    letter-spacing: -28px;
+    font-size: 202px;
+    font-weight: bold;
+    color: #3273dc;
+    opacity: .3;
+    transition: all .5s ease;
+    text-shadow: 0px 0px 4px #999;
+}
+
+.hero-body .wrapper::after {
+    content: "A-SPACE";
+    display: inline-block;
+    position: absolute;
+    bottom: -113.1px;
+    right: -158px;
+    left: 66px;
+    z-index: 0;
+    letter-spacing: -28px;
+    font-size: 202px;
+    font-weight: bold;
+    color: #fff;
+    opacity: .3;
+    transition: all .5s ease;
+    text-shadow: 0px 0px 4px #999;
+}
+
+.hero-body .wrapper.move::before {
+    left: -370px;
+    top: -150px;
+}
+
+.hero-body .wrapper.move::after {
+    bottom: -130px;
+    left: 86px;
+}
+
+.mask {
+    position: relative;
+    z-index: 5;
+    width: 360px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 200px;
+    font-size: 0;
+    transition: all .3s ease-in-out;
+}
+
+.form-container.move {
+    left: -330px;
+}
+
+label.label {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px #666;
+}
+
+#form-container li {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin: 0 20px;
+    padding: 20px;
+}
+
+.login-button {
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+    align-self: center;
+}
+
+p.control {
+    margin: 5px auto;
+}
+
+#j-login-wrap {
+    position: relative;
+    top: -46px;
+}
+
+#j-regit-wrap.regit-wrap {
+    margin-top: 24px;
+    opacity: 0;
+}
+
+.form-container.move #j-login-wrap {
+    opacity: 0;
+}
+
+.form-container.move #j-regit-wrap {
+    opacity: 1;
+}
+
+.char-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.char {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, .1);
+    transition: all .3s ease;
+}
+
+.login-char {
+    margin-left: -500px;
+    margin-top: -300px;
+    font-size: 300px;
+    color: rgba(255, 255, 255, .3);
+}
+
+.char-wrap.move .login-char {
+    font-size: 80px;
+    margin-left: 0;
+    margin-top: 0;
+    color: rgba(255, 255, 255, .1);
+}
+
+.regist-char {
+    margin-right: 0;
+    color: rgba(255, 255, 255, .1);
+}
+
+.char-wrap.move .regist-char {
+    margin-left: 200px;
+    margin-top: 20px;
+    font-size: 300px;
+    color: rgba(255, 255, 255, .3);
+}

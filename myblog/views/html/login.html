@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="/static/fonts/iconfont.css">
+    <link rel="stylesheet" href="/src/css/editormd.min.css" />
+    <link rel="stylesheet" href="/static/style/common.css">
+    <link rel="stylesheet" href="/static/style/login.css">
+</head>
+
+<body>
+    <section id="j-hero" class="hero is-info is-fullheight">
+        <div id="j-char-wrap" class="char-wrap">
+            <span class="char login-char">LOGIN</span><span class="char regist-char">REGIST</span>
+        </div>
+        <!-- Hero header: will stick at the top -->
+        <div class="hero-head">
+            <header class="nav">
+                <div class="container">
+                    <div class="nav-left">
+                        <a class="nav-item">
+                            A度空间
+                        </a>
+                    </div>
+                    <span class="nav-toggle">
+                        <span>a</span>
+                    <span>b</span>
+                    <span>c</span>
+                    </span>
+                    <div class="nav-right nav-menu">
+                        <a class="nav-item" href="/">
+                            Home
+                        </a>
+                        <a class="nav-item" href="/api/get/articles">
+                            Archives
+                        </a>
+                        <a class="nav-item" href="/about.html">
+                            About
+                        </a>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="wrapper">
+                    <div class="mask">
+                        <ul id="form-container" class="form-container has-text-left">
+                            <li id="j-login-wrap" class="field">
+                                <form id="j-login" action="/api/login" method="post">
+                                    <label class="label" for="username">用户名</label>
+                                    <p class="control has-icons-left has-icons-right">
+                                        <input id="j-login-username" class="input" type="text" name="username">
+                                        <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+                                        <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
+                                        <p/>
+                                        <label class="label" for="password">密码</label>
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input id="j-login-password" class="input" type="password" name="password">
+                                            <span class="icon is-small is-left">
+                                        <i class="fa fa-key"></i>
+                                    </span>
+                                            <span class="icon is-small is-right">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                            <p/>
+                                            <input id="login-submit" class="button is-primary login-button" type="submit" value="登录">
+                                </form>
+                            </li>
+                            <li id="j-regist-wrap" class="field regit-wrap">
+                                <form id="j-regist" action="/api/login/regist" method="post">
+                                    <label class="label" for="username">用户名</label>
+                                    <p class="control has-icons-left has-icons-right">
+                                        <input id="j-regist-username" class="input" type="text" name="username">
+                                        <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+                                        <span class="icon is-small is-right"><i class="fa fa-check"></i></span>
+                                        <p/>
+                                        <label class="label" for="password">密码</label>
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input id="j-regist-password" class="input" type="password" name="password">
+                                            <span class="icon is-small is-left">
+                                        <i class="fa fa-key"></i>
+                                    </span>
+                                            <span class="icon is-small is-right">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                            <p/>
+                                            <label class="label" for="phone">手机号</label>
+                                            <p class="control has-icons-left has-icons-right">
+                                                <input id="j-regist-phone" class="input" type="tel" name="phone">
+                                                <span class="icon is-small is-left">
+                                        <i class="fa fa-mobile"></i>
+                                    </span>
+                                                <span class="icon is-small is-right">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                                <p/>
+                                                <input id="regist-submit" class="button is-primary login-button" type="submit" value="注册">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+            <nav id="j-nav" class="tabs is-boxed is-centered is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li class="is-active"><a>登录</a></li>
+                        <li><a>注册</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </section>
+
+    <div id="notification" class="notification is-warning">
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+    $(function() {
+        $('#login-submit').click(function() {
+            $.post('/api/login', $('#j-login').serialize(), function(rs) {
+                if (rs.statu == 'OK') {
+                    window.location.href = rs.redirection;
+                } else {
+                    $('#j-hero').addClass('is-danger');
+                    notice('用户名或密码错误，请重试！');
+                }
+            });
+            return false;
+        });
+        $('#regist-submit').click(function() {
+            $.post('/api/login/regist', $('#j-regist').serialize(), function(rs) {
+                if (rs.statu == 'err') {
+                    notice(rs.result);
+                } else if (rs.statu == 'OK') {
+                    $('#form-container').removeClass('move');
+                    $('#j-char-wrap').removeClass('move');
+                    $('.hero-body .wrapper').removeClass('move');
+                    $('#j-login-username').val(rs.result.username);
+                }
+            });
+            return false;
+        });
+        $('#j-nav').on('click', 'a', function() {
+            $('#j-nav li').removeClass('is-active');
+            $(this).parent().addClass('is-active');
+            console.log($(this).text());
+            if ($(this).text() == ('登录')) {
+                $('#form-container').removeClass('move');
+                $('#j-char-wrap').removeClass('move');
+                $('.hero-body .wrapper').removeClass('move');
+            } else {
+                $('#form-container').addClass('move');
+                $('#j-char-wrap').addClass('move');
+                $('.hero-body .wrapper').addClass('move');
+            }
+        });
+        $('input[type!=submit]').focus(function() {
+            if ($('#j-hero').hasClass('is-danger')) {
+                $('#j-hero').removeClass('is-danger');
+            }
+            $(this).val('');
+        });
+
+    });
+
+    function notice(msg) {
+        $('#notification').text(msg).css({
+            top: "1px",
+            opacity: 1
+        });
+        setTimeout(function() {
+            $('#notification').html(msg).css({
+                top: "-50px",
+                opacity: 0
+            });
+        }, 3000);
+    }
+</script>
+
+</html>

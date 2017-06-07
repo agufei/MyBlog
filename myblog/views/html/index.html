@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A度空间</title>
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="/static/fonts/iconfont.css">
+    <link rel="stylesheet" href="/static/style/common.css">
+    <link rel="stylesheet" href="/static/style/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <ul class="nav-ul">
+            <li class="up">
+                <a href="javascript:;" class="logo">A度空间</a>
+                <div class="nav-btn">
+                    <a class="active" href="/index.html"><span>Home</span></a>
+                    <a href="/api/get/articles"><span>Archives</span></a>
+                    <a href="/about.html"><span>About</span></a>
+                </div>
+                <div class="search"><i class="iconfont icon-search"></i><input type="text" placeholder="Search"></div>
+            </li>
+            <!--<li class="down">
+                    <span class="title"></span>
+                    <div class="down-btn">
+                        <a href="javascript:;"><i></i></a>
+                        <a href="javascript:;" class="iconfont icon-xin"><i></i></a>
+                    </div>
+                </li>-->
+        </ul>
+    </header>
+    <p class="placeholder"></p>
+    <div class="container">
+        <div class="tile is-ancestor">
+            <article class="tile is-vertical is-9">
+                <div id="j-artList" class="tile">
+                    <div id="j-artList-l" class="tile is-vertical is-parent">
+
+                    </div>
+                    <div id="j-artList-r" class="tile is-vertical is-parent">
+
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <div class="tile is-child">
+                        <nav class="pagination is-small is-centered">
+                            <a class="pagination-previous">上一页</a>
+                            <a class="pagination-next">下一页</a>
+                            <ul class="pagination-list">
+                                <li><a class="pagination-link">1</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link">45</a></li>
+                                <li><a class="pagination-link is-current">46</a></li>
+                                <li><a class="pagination-link">47</a></li>
+                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <li><a class="pagination-link">86</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </article>
+            <aside class="tile is-vertical is-parent">
+                <div class="tile is-child">
+                    <section class="card">
+                        <div class="card-image image is-1by1">
+                            <img src="/static/images/code.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4"><span class="slash">#</span>agufei</p>
+                        </div>
+                        <div class="card-footer content">
+                            <p>可以写点座右铭...</p>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <div class="card-header">
+                            <div class="content">
+                                <h3 class="title is-5">Tags</h3>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <ul id="j-tagList" class="content">
+                                <!--<li><a class="level" href="javascript:;"><strong class="level-left is-small">javascript</strong><span class="level-right is-medium">12</span></a></li>
+                                <li><a class="level" href="javascript:;"><strong class="level-left is-small">css</strong><span class="level-right is-medium">3</span></a></li>
+                                <li><a class="level" href="javascript:;"><strong class="level-left is-small">bootstrap</strong><span class="level-right is-medium">25</span></a></li>-->
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!--<div class="tile is-child">-->
+
+                <!--</div>-->
+            </aside>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>created by agufei</p>
+            <p>
+                <a href="javascript:;"><i class="iconfont icon-youxiang"></i></a>
+                <a href="javascript:;"><i class="iconfont icon-tubiao21"></i></a>
+                <a href="javascript:;"><i class="iconfont icon-qq"></i></a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/index-api.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+.wh-100,
+.modal,
+.modal-content {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #ececec;
+}
+
+header {
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.hero-body {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 66px;
+}
+
+.logout {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 10;
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.panel {
+    border-radius: 5px;
+}
+
+.panel div.search-div:hover {
+    background: #fff;
+}
+
+.panel .search-ipt:focus {
+    border-color: #3367d6;
+}
+
+.panel-tabs a {
+    color: #3367d6;
+}
+
+.tags-list .panel-block.active a {
+    color: #fff;
+}
+
+
+/*.manage-aside .panel-block {
+    background: #fff;
+}*/
+
+.manage-aside .panel-block {
+    cursor: pointer;
+}
+
+.manage-aside .panel-block a {
+    color: #555;
+}
+
+.manage-aside .panel-block:hover {
+    background: #3367d6;
+}
+
+.manage-aside .panel-block:hover a {
+    color: #fff;
+}
+
+.box-wrap {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 30px;
+    padding-bottom: 70px;
+}
+
+.box:hover {
+    box-shadow: 0 0 15px 5px #ccc;
+}
+
+.box i {
+    color: #ccc;
+    font-size: 20px;
+}
+
+.box a {
+    background: #fff;
+}
+
+.box:hover i,
+.box a:hover i {
+    color: #3367d6;
+}
+
+.pagination {
+    margin: 10px 20px 0;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #555;
+}
+
+.add-article p {
+    text-align: center;
+    line-height: 30px;
+}
+
+
+/*=============== modal ==================*/
+
+.modal-content {
+    overflow-x: hidden;
+}
+
+.form-wrap {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /*align-content: space-between;*/
+}
+
+.modal-background {
+    background: rgba(51, 103, 214, .9);
+}
+
+#editormd {
+    border-radius: 3px;
+    margin-bottom: -10px;
+}
+
+.panel {
+    background: #fff;
+}
+
+.panel-block {
+    background: #fff;
+    border-left: 3px solid transparent;
+}
+
+.tags .panel-block {
+    padding: 4px 12px;
+}
+
+.tags .panel-block:hover {
+    cursor: pointer;
+    background: #ececec;
+}
+
+.tags .panel-block.is-active {
+    border-left: 3px solid #3367d6;
+}
+
+.tags .panel-block.is-active i {
+    color: #3367d6;
+}
+
+.article-info .panel-block:even {
+    background: #999;
+}
+
+p.panel-block.content {
+    margin-bottom: 0;
+}
+
+#edit-buttons .level {
+    position: relative;
+}
+
+.tooltip {
+    /*display: none;*/
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    right: 40px;
+    z-index: 10;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: all .3s ease-in-out;
+}

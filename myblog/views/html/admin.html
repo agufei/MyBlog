@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理后台</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+    <link rel="stylesheet" href="/src/css/editormd.min.css" />
+    <link rel="stylesheet" href="/static/style/common.css">
+    <link rel="stylesheet" href="/static/style/archives.css">
+    <link rel="stylesheet" href="/static/style/admin.css">
+</head>
+
+<body>
+    <!--<input id="get-html" type="button" name="" value="提取html">-->
+    <header>
+        <section class="hero is-info is-bold">
+            <div class="hero-body">
+                <a id="j-logout" class="button is-primary logout">LOGOUT</a>
+                <div class="container">
+                    <h1 class="title">
+                        A度空间
+                    </h1>
+                    <h2 class="subtitle">
+                        Management
+                    </h2>
+                </div>
+                </a>
+        </section>
+    </header>
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-3 manage-aside">
+                <div class="tile is-child">
+                    <div class="panel">
+                        <div class="panel-heading">文章分类</div>
+                        <div class="panel-block search-div">
+                            <p class="control has-icons-left">
+                                <input class="input is-small search-ipt" type="text" placeholder="Search">
+                                <span class="icon is-small is-left">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            </p>
+                        </div>
+                        <div id="j-tabs" class="panel-tabs is-large">
+                            <a data-filter="tags" class="article-filter is-active">标签</a>
+                            <a data-filter="dates" class="article-filter">日期</a>
+                            <a data-filter="visited" class="article-filter">访问量</a>
+                            <a data-filter="like" class="article-filter">点赞数</a>
+                        </div>
+                        <ul id="j-label-tags" class="tags-list">
+                            <li class="panel-block active">
+                                <a>所有</a>
+                            </li>
+                        </ul>
+                        <ul id="j-label-dates" class="tags-list">
+                            <li class="panel-block active">
+                                <a>所有</a>
+                            </li>
+                        </ul>
+                        <ul id="j-label-visited" class="tags-list">
+                            <li class="panel-block active">
+                                <a>所有</a>
+                            </li>
+                        </ul>
+                        <ul id="j-label-like" class="tags-list">
+                            <li class="panel-block active">
+                                <a>所有</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box-wrap">
+                    <div class="box">
+                        <a href="javascript:;" id="add-article">
+                            <div>
+                                <p><span class="icon"><i class="fa fa-plus"></i></span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="box-container" id="j-box-container">
+
+                    </div>
+                    <nav class="pagination is-small is-centered">
+                        <a class="pagination-previous">上一页</a>
+                        <a class="pagination-next">下一页</a>
+                        <ul class="pagination-list">
+                            <li><a class="pagination-link">1</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a class="pagination-link">45</a></li>
+                            <li><a class="pagination-link is-current">46</a></li>
+                            <li><a class="pagination-link">47</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a class="pagination-link">86</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content container">
+            <div class="form-wrap">
+                <div class="tile is-ancestor">
+                    <div class="tile is-parent is-vertical is-9">
+                        <p class="control tile is-child"><input id="j-edit-title" class="input is-8" type="text" name="" id="" placeholder="文章标题"></p>
+                        <div class="tile is-child">
+                            <div class="control">
+                                <div id="editormd">
+                                    <textarea style="display:none;" placeholder="在此使用Markdown格式编辑文档"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edit-buttons" class="tile is-child is-mobile">
+                            <div class="level">
+                                <div class="level-item">
+                                    <a id="j-button-save" class="button is-primary">
+                                        <span class="icon is-small">
+                                        <i class="fa fa-floppy-o"></i>
+                                        </span>
+                                        <span>保存</span>
+                                    </a>
+                                </div>
+                                <div class="level-item">
+                                    <a id="j-button-abstract" class="button is-warning">
+                                        <span class="icon is-small">
+                                        <i class="fa fa-floppy-o"></i>
+                                        </span>
+                                        <span>提取摘要</span>
+                                    </a>
+                                </div>
+                                <div class="level-item">
+                                    <a id="j-button-cancel" class="button is-danger">
+                                        <span class="icon is-small">
+                                    <i class="fa fa-close"></i>
+                                    </span>
+                                        <span>取消</span>
+                                    </a>
+                                </div>
+                                <div id="j-abstract-tooltip" class="box tooltip" id="j-box-abstract"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-parent is-vertical">
+                        <div class="tile is-child">
+                            <div class="panel tags">
+                                <p class="panel-heading">Tags</p>
+                                <ul id="j-tags-list">
+                                    <li class="panel-block is-active"><span class="panel-icon"><i class="fa fa-tags"></i></span>javascript</li>
+                                    <li class="panel-block"><span class="panel-icon"><i class="fa fa-tags"></i></span>bootstrap</li>
+                                    <li class="panel-block"><span class="panel-icon"><i class="fa fa-tags"></i></span>css</li>
+                                    <li class="panel-block"><span class="panel-icon"><i class="fa fa-tags"></i></span>css</li>
+                                    <li class="panel-block"><span class="panel-icon"><i class="fa fa-tags"></i></span>html</li>
+                                    <li class="panel-block"><span class="panel-icon"><i class="fa fa-tags"></i></span>html</li>
+                                </ul>
+                            </div>
+                            <div class="panel article-info">
+                                <p class="panel-heading">Info</p>
+                                <p class="panel-block"><span class="panel-icon"><i class="fa fa-clock-o"></i></span><span class="content is-small">创建时间</span></p>
+                                <p class="panel-block"><span id="j-info-addTime" class="content is-small">2017年4月13日 PM4:09</span></p>
+                                <p class="panel-block"><span class="panel-icon"><i class="fa fa-clock-o"></i></span><span class="content is-small">修改时间</span></p>
+                                <p class="panel-block"><span id="j-info-editTime" class="content is-small">2017年4月13日 PM4:09</span></p>
+                                <p class="panel-block content is-small"><span class="panel-icon"><i class="fa fa-book"></i></span><span>阅读量:</span><span id="j-info-visited" class="content is-small">254</span></p>
+                                <p class="panel-block content is-small"><span class="panel-icon"><i class="fa fa-heart-o"></i></span><span>点赞量:</span><span id="j-info-like" class="content is-small">161</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close"></div>
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/src/editormd.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/archives-api.js"></script>
+    <script src="/static/js/admin-api.js"></script>
+</body>
+
+</html>

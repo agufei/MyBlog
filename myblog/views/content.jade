@@ -1,0 +1,110 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title A&#x5EA6;&#x7A7A;&#x95F4;
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css')
+    |     
+    link(rel='stylesheet', type='text/css', href='/static/fonts/iconfont.css')
+    |     
+    link(rel='stylesheet', href='/src/css/editormd.min.css')
+    |     
+    link(rel='stylesheet', href='/static/style/common.css')
+    |     
+    link(rel='stylesheet', href='/static/style/archives.css')
+  body(data-id=id)
+    header.header
+      ul.nav-ul
+        li.up
+          a.logo(href='javascript:;') A&#x5EA6;&#x7A7A;&#x95F4;
+          |                 
+          .nav-btn
+            a(href='/index.html')
+              span Home
+            |                     
+            a(href='/api/get/articles')
+              span Archives
+            |                     
+            a(href='/about.html')
+              span About
+          |                 
+          .search
+            i.iconfont.icon-search
+            input(type='text', placeholder='Search')
+        |             
+        li.down.level
+          a.level-left
+            span.level-item.logo #{title}
+          |                 
+          .down-btn.level-right.level-item
+            a.icon.nav-down-icon.to-top(href='javascript:;')
+              i.fa.fa-arrow-up
+            |                     
+            a.icon.nav-down-icon.to-bottom(href='javascript:;')
+              i.fa.fa-arrow-down
+    |     
+    p.placeholder
+    |     
+    .container
+      .tile.is-ancestor
+        article.tile.is-parent.is-9
+          .tile.is-child.content.content-wrap
+            h2.title.is-spaced #{title}
+            |                     
+            h4.subtitle
+              span#j-date #{addTime}
+              span
+                span.icon.is-small
+                  i.fa.fa-user
+                span#j-visited #{visited}
+              span
+                span.icon.is-small#j-like-switch
+                  i.fa.fa-heart.like-switch
+                span#j-like #{like}
+            |                     
+            p.j-tags
+              for tag in tags
+                a(href='/api/get/articles/tag/'+tag)
+                  i.tag.is-info=tag
+            |                     
+            .main-content#j-content
+        |             
+        aside.tile.is-vertical.is-parent
+          .tile.is-child
+            section.card
+              .card-image.image.is-1by1
+                img(src='/static/images/code.jpg')
+              |                         
+              .card-content
+                p.title.is-4
+                  span.slash #
+                  | agufei
+              |                         
+              .card-footer.content
+                p &#x53EF;&#x4EE5;&#x5199;&#x70B9;&#x5EA7;&#x53F3;&#x94ED;...
+    |     
+    footer.footer
+      .content.has-text-centered
+        p created by agufei
+        |             
+        p
+          a(href='javascript:;')
+            i.iconfont.icon-youxiang
+          |                 
+          a(href='javascript:;')
+            i.iconfont.icon-tubiao21
+          |                 
+          a(href='javascript:;')
+            i.iconfont.icon-qq
+    |     
+    script(src='https://code.jquery.com/jquery-1.12.4.js')
+    script(src="/src/editormd.min.js")
+    script(src="/src/lib/marked.min.js")
+    script(src="/src/lib/prettify.min.js")
+    script(src="/static/js/script.js")
+    script(src="/static/js/content-api.js")

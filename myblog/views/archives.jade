@@ -1,0 +1,170 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    |     
+    title A&#x5EA6;&#x7A7A;&#x95F4;
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css')
+    |     
+    link(rel='stylesheet', type='text/css', href='/static/fonts/iconfont.css')
+    |     
+    link(rel='stylesheet', href='/src/css/editormd.min.css')
+    |     
+    link(rel='stylesheet', href='/static/style/common.css')
+    |     
+    link(rel='stylesheet', href='/static/style/archives.css')
+  body
+    header.header
+      .nav-wrap
+        ul.nav-ul
+          li.up
+            a.logo(href='javascript:;') A&#x5EA6;&#x7A7A;&#x95F4;
+            |                     
+            .nav-btn
+              a(href='/index.html')
+                span Home
+              |                         
+              a.active(href='/api/get/articles')
+                span Archives
+              |                         
+              a(href='/about.html')
+                span About
+            |                     
+            .search
+              i.iconfont.icon-search
+              input(type='text', placeholder='Search')
+    p.placeholder
+    |     
+    .container
+      .tile.is-ancestor
+        article.tile.is-9
+          .tile.is-vertical.is-parent.is-4.manage-aside
+            .tile.is-child
+              .panel
+                .panel-heading &#x6587;&#x7AE0;&#x5206;&#x7C7B;
+                |                                 
+                .panel-block.search-div
+                  p.control.has-icons-left
+                    input.input.is-small.search-ipt(type='text', placeholder='Search')
+                    |                                         
+                    span.icon.is-small.is-left
+                      i.fa.fa-search
+                |                                 
+                .panel-tabs.is-large#j-tabs
+                  a.article-filter.is-active(data-filter='tags') &#x6807;&#x7B7E;
+                  |                                     
+                  a.article-filter(data-filter='dates') &#x65E5;&#x671F;
+                  |                                     
+                  a.article-filter(data-filter='visited') &#x8BBF;&#x95EE;&#x91CF;
+                  |                                     
+                  a.article-filter(data-filter='like') &#x70B9;&#x8D5E;&#x6570;
+                |                                 
+                ul.tags-list#j-label-tags
+                  li.panel-block.active
+                    a &#x6240;&#x6709;
+                |                                 
+                ul.tags-list#j-label-dates
+                  li.panel-block.active
+                    a &#x6240;&#x6709;
+                |                                 
+                ul.tags-list#j-label-visited
+                  li.panel-block.active
+                    a &#x6240;&#x6709;
+                |                                 
+                ul.tags-list#j-label-like
+                  li.panel-block.active
+                    a &#x6240;&#x6709;
+          |                     
+          .tile.is-vertical
+              .tile.is-parent.is-vertical
+                .tile.is-child.box-wrap
+                  #j-box-wrap
+                    //- for box in articles
+                    //-   .box
+                    //-     article.media
+                    //-       .media-left
+                    //-         figure.image.is-64x64
+                    //-           img(src='/#{box.fstPicUrl}', alt='Image')
+                    //-       |                                         
+                    //-       .media-content
+                    //-         .content
+                    //-           p
+                    //-             a.article-title(href='/api/get/content?id=#{box.id}')
+                    //-               strong #{box.title}
+                    //-               |  
+                    //-               small #{box.addTime}
+                    //-               |  
+                    //-               small
+                    //-                 span.icon.is-small
+                    //-                   i.fa.fa-user
+                    //-                 | #{box.visited}
+                    //-               small
+                    //-                 span.icon.is-small
+                    //-                   i.fa.fa-heart
+                    //-                 | #{box.like}
+                    //-               |                                                         
+                    //-               br
+                    //-               |  #{box.abstract}
+                  nav.pagination.is-small.is-centered
+                    a.pagination-previous &#x4E0A;&#x4E00;&#x9875;
+                    |                                     
+                    a.pagination-next &#x4E0B;&#x4E00;&#x9875;
+                    |                                     
+                    ul.pagination-list
+                      li
+                        a.pagination-link 1
+                      |                                         
+                      li
+                        span.pagination-ellipsis &mldr;
+                      |                                         
+                      li
+                        a.pagination-link 45
+                      |                                         
+                      li
+                        a.pagination-link.is-current 46
+                      |                                         
+                      li
+                        a.pagination-link 47
+                      |                                         
+                      li
+                        span.pagination-ellipsis &mldr;
+                      |                                         
+                      li
+                        a.pagination-link 86
+                      |             
+        aside.tile.is-vertical.is-parent
+          .tile.is-child
+            section.card
+              .card-image.image.is-1by1
+                img(src='/static/images/code.jpg', alt='')
+              |                         
+              .card-content
+                p.title.is-4
+                  span.slash #
+                  | agufei
+              |                         
+              .card-footer.content
+                p &#x53EF;&#x4EE5;&#x5199;&#x70B9;&#x5EA7;&#x53F3;&#x94ED;...
+    |     
+    footer.footer
+      .content.has-text-centered
+        p created by agufei
+        |             
+        p
+          a(href='javascript:;')
+            i.iconfont.icon-youxiang
+          |                 
+          a(href='javascript:;')
+            i.iconfont.icon-tubiao21
+          |                 
+          a(href='javascript:;')
+            i.iconfont.icon-qq
+    |     
+    script(src='https://code.jquery.com/jquery-1.12.4.js')
+    // <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    script(src='/static/js/script.js')
+    script(src='/static/js/archives-api.js')

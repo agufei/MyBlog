@@ -1,0 +1,254 @@
+/*
+ * main.css Start
+ */
+
+
+/*header start*/
+
+body {
+    background: #EBECEE;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: 0 30px;
+    background: #3367d6;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0px 0px 8px 2px #999;
+}
+
+.nav-ul {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+}
+
+.nav-ul a:hover {
+    color: #fff
+}
+
+.up {
+    overflow: hidden;
+}
+
+.header .logo {
+    float: left;
+    padding: 0 20px;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.header .logo:hover {
+    background: transparent;
+}
+
+.nav-btn {
+    float: left;
+    margin: 0 28px;
+    text-align: left;
+}
+
+.nav-btn a {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0 10px;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, .7);
+    transition: all .2s ease;
+}
+
+.nav-btn a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.nav-btn a::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -2px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    transition: all .2s ease;
+}
+
+.nav-btn a.active::after,
+.nav-btn a:hover::after {
+    content: '';
+    bottom: 7px;
+}
+
+.search {
+    float: right;
+    position: relative;
+    margin: 12px 50px;
+    background: rgba(255, 255, 255, .3);
+    width: 250px;
+    height: 26px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.search:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+.search i {
+    /*position: absolute;
+    top: 5px;
+    left: 0;*/
+    float: left;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+
+.search input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0 10px 0 40px;
+    background: transparent;
+    font-size: 14px;
+    line-height: 26px;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.search.active {
+    background: #fff;
+}
+
+.search.active input {
+    /*background: #fff;*/
+    color: #555;
+}
+
+.search.active input::-webkit-input-placeholder {
+    color: #555;
+}
+
+.search.active i {
+    color: #555;
+}
+
+.placeholder {
+    height: 70px;
+}
+
+
+/*header end*/
+
+
+/*mid-wrap start*/
+
+.mid-wrap {
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.card {
+    background: #fff;
+    flex: 1;
+}
+
+.card .content {
+    padding: 10px;
+}
+
+.card .title a {
+    color: #555;
+}
+
+.pagination a {
+    background: #fff;
+    color: #555;
+}
+
+.pagination a:hover {
+    background: #3367d6;
+    color: #fff;
+}
+
+.pagination a.is-current {
+    background: #3367d6;
+    border-color: #3367d6;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.card span,
+.card .iconfont {
+    margin: 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+/*mid-wrap end*/
+
+
+/*aside start*/
+
+aside .slash {
+    font-size: 20px;
+    color: #4caf50;
+}
+
+aside section {
+    margin-bottom: 20px;
+}
+
+
+/*aside end*/
+
+
+/*footer start*/
+
+.footer {
+    margin-top: 40px;
+    padding: 30px 24px;
+    background: #363636;
+}
+
+.footer p {
+    color: #cecece;
+}
+
+.footer i {
+    margin: 0 10px;
+}
+
+
+/*footer end*/
+
+
+/*
+ * main.css End
+ */
